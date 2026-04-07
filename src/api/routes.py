@@ -44,22 +44,21 @@ def login ():
     return jsonify({"msg": "user created succesfully"}),201
 
 @api.route('/login', methods=["POST"])
-def register ():
+def login():                                 
     data = request.get_json()
     email = data.get("email")
     password = data.get("password")
     if not email or not password:
-        return jsonify ({"error": "email and password are required"}), 400,
-
-    user =  db.session.execute(select(User).where(User.email == email)).scalar_one_or_none()
+        return jsonify({"error": "email and password are required"}), 400 
+    user = db.session.execute(select(User).where(User.email == email)).scalar_one_or_none()
     if user is None:
-        return jsonify({"msg": "invalid email or password"})
-    
+        return jsonify({"msg": "invalid email or password"}), 400 
+
     if user.check_password(password):
         access_token = create_access_token(identity=str(user.id))
         return jsonify({"msg": "login is successful", "token": access_token}), 200
     else:
-        return jsonify({"msg": "invalid email or password"}),400
+        return jsonify({"msg": "invalid email or password"}), 400
 
 @api.route('/profile', methods=["GET"])
 @jwt_required()
