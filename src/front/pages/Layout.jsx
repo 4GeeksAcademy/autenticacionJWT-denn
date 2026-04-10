@@ -1,11 +1,9 @@
 import { Outlet } from "react-router-dom/dist"
 import { useEffect } from "react"
 import ScrollToTop from "../components/ScrollToTop"
-import { Navbar } from "../components/Navbar"
 import useGlobalReducer from "../hooks/useGlobalReducer"
 import { getProfile } from "../services/backendServices.JS"
 
-// Base component that maintains the navbar and footer throughout the page and the scroll to top functionality.
 export const Layout = () => {
     const { dispatch } = useGlobalReducer();
 
