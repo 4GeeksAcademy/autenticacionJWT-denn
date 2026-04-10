@@ -25,8 +25,8 @@ def handle_hello():
 
 
 @api.route('/register', methods=["POST"])
-def login ():
-    data = request.get_json()
+def register ():
+    data = request.get_json(force=True)
     email = data.get("email")
     password = data.get("password")
     if not email or not password:
@@ -44,8 +44,8 @@ def login ():
     return jsonify({"msg": "user created succesfully"}),201
 
 @api.route('/login', methods=["POST"])
-def login():                                 
-    data = request.get_json()
+def login():                               
+    data = request.get_json(force=True)
     email = data.get("email")
     password = data.get("password")
     if not email or not password:

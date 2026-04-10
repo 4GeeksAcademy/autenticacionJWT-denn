@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400&display=swap');
+
+.private-wrapper {
+    min-height: 100vh;
+    background: #f5f5f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.private-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.private-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 400;
+}
+
+.private-status {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #111;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.private-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #111;
+    display: inline-block;
+}
+
+.private-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.private-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 12vw, 10rem);
+    line-height: 0.9;
+    color: #111;
+    letter-spacing: 0.01em;
+    margin: 0;
+    max-width: 700px;
+}
+
+.private-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.private-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    max-width: 220px;
+    line-height: 1.6;
+}
+
+.btn-logout {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    background: #111;
+    color: #f5f5f0;
+    border: none;
+    padding: 14px 40px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-logout:hover {
+    background: #f5f5f0;
+    color: #111;
+    outline: 1.5px solid #111;
+}
+
+@media (max-width: 600px) {
+    .private-wrapper {
+        padding: 2rem 1.5rem;
+    }
+
+    .private-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+}
